@@ -1,0 +1,54 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Select chat -->
+    <div class="col-md-3">
+      <h3 style="margin-top: 0px;">Conversations</h3>
+      <div class="list-group">
+        <button type="button" class="list-group-item">
+          Main chat
+        </button>
+        <button *ngFor="let conv of privateConversations" type="button" class="list-group-item">
+          {{conv}}
+        </button>
+      </div>
+    </div>
+    <!-- Messages -->
+    <div class="col-md-6">
+      <div class="well well-sm pre-scrollable">
+        <div *ngFor="let message of messages" class="row">
+          <div class="col-md-2">
+            <p class="text-right">
+              {{message.sender}}
+            </p>
+          </div>
+          <div class="col-md-10">
+            <p>
+              {{message.message}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="text-right">
+          <small><em>{{displayName}} is typing...</em></small>
+        </p>
+      </div>
+      <!-- Enter message -->
+      <div class="input-group">
+        <textarea class="form-control" rows="1" autosize placeholder="Type message..." [(ngModel)]="message"></textarea>
+        <span class="input-group-btn" style="top:0px;">
+          <button class="btn btn-default" type="button" (click)="sendMessage()">Send</button>
+        </span>
+      </div>
+    </div>
+    <!-- Online users -->
+    <div class="col-md-3">
+      <h3 style="margin-top: 0px;">Online users</h3>
+      <div class="list-group">
+        <button *ngFor="let user of onlineUsers" type="button" class="list-group-item">
+          {{user.displayName}}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

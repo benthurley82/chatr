@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="jumbotron">
+        <h1>Sign in</h1>
+        <p>Enter a display name to start chatting</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <form (ngSubmit)="onSignin()" #signinForm="ngForm">
+      <div class="input-group">
+        <input name="displayName" type="text" [(ngModel)]="displayName" class="form-control"
+                placeholder="Enter a display name..." required #displayNameTR="ngModel">
+        <span class="input-group-btn" style="top:0px;">
+          <button class="btn btn-primary" type="submit"
+                  [disabled]="!signinForm.form.valid">Sign in</button>
+        </span>
+      </div>
+      <div [hidden]="displayNameTR.valid || displayNameTR.pristine"
+             class="alert alert-danger">
+          A display name is required
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
