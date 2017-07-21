@@ -1,14 +1,14 @@
-import { ChatrPage } from './app.po';
+import { ChatrWebPage } from './app.po';
 
-describe('chatr App', function() {
-  let page: ChatrPage;
+describe('chatr-web App', () => {
+  let page: ChatrWebPage;
 
   beforeEach(() => {
-    page = new ChatrPage();
+    page = new ChatrWebPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('Welcome to app!');
   });
 });

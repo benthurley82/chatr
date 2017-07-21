@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule }   from '@angular/router';
 
-import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { AlertModule } from 'ngx-bootstrap';
 
 import { AppRoutingModule }     from './shared/app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,7 +25,7 @@ import { WebSocketService } from './shared/web-socket.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AlertModule,
+    AlertModule.forRoot(),
     AppRoutingModule
   ],
   providers: [
