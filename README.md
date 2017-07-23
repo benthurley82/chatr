@@ -37,3 +37,5 @@ To run the frontend angular project.
 3. `npm start`
 
 The angular CLI uses the command `ng serve` to run a build and start a webpack server that monitors for code changes. The build step is required to transpile the TypeScript into JavaScript. To avoid cross-domain issues in the browser the frontend project also acts as a proxy to the socket server. Using `npm start` calls `ng serve` but passes in the configuration to setup the proxy.
+
+Now the project should be running it can be accessed in the browser by naigating to http://localhost:4200/.
